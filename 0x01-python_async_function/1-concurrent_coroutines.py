@@ -5,7 +5,7 @@ Module that contains the wait_n coroutine to execute multiple coroutines
 
 import asyncio
 from typing import Generator
-from basic_async_syntax import wait_random  # Correct import method
+from basic_async_syntax import wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> Generator[float, None, None]:
