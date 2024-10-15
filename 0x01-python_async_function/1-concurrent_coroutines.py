@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Module that contains the wait_n coroutine
+Module that contains the wait_n coroutine to execute multiple coroutines
 """
 
 import asyncio
-from typing import List, Generator
-from 0-basic_async_syntax import wait_random
+from typing import Generator
+from basic_async_syntax import wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> Generator[float, None, None]:
