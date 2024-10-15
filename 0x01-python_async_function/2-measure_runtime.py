@@ -1,21 +1,20 @@
 #!/usr/bin/env python3
-"""Measure the execution time of wait_n."""
-
+"""Function that gets time taken to complete the program."""
 import time
-import asyncio
-from 1_concurrent_coroutines import wait_n
+conc = __import__("1-concurrent_coroutines")
 
 
-def measure_time(n: int, max_delay: int) -> float:
-    """
-    Measure the total runtime for wait_n and return total_time / n.
-    Args:
-        n (int): The number of coroutines.
-        max_delay (int): The maximum delay for each coroutine.
-    Returns:
-        float: The average runtime per coroutine.
-    """
-    start_time = time.time()
-    asyncio.run(wait_n(n, max_delay))
-    total_time = time.time() - start_time
-    return total_time / n
+async def measure_time(n: int, max_delay: int) -> float:
+    """Get time taken to complete program."""
+    # Save timestamp
+    start = time.time()
+
+    # Use the dynamically imported `wait_n` from the "1-concurrent_coroutines" module
+    await conc.wait_n(n, max_delay)
+
+    # Save timestamp
+    end = time.time()
+
+    total_time = end - start  # Time taken to execute the program
+
+    return (total_time / n)
