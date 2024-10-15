@@ -2,6 +2,7 @@
 """Run multiple tasks concurrently and return sorted delays."""
 
 import asyncio
+from typing import Generator
 from typing import List
 from 3_tasks import task_wait_random
 
